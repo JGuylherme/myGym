@@ -19,10 +19,8 @@ export default function SignIn() {
     setLoading(true);
     try {
       const response = await signInWithEmailAndPassword(auth, email, password);
-      console.log(response);
       navigation.navigate('Home');
     } catch (error) {
-      console.log(error);
       alert('Login falhou: ' + error.message);
     } finally {
       setLoading(false);
@@ -33,10 +31,8 @@ export default function SignIn() {
     setLoading(true);
     try {
       const response = await createUserWithEmailAndPassword(auth, email, password);
-      console.log(response);
       navigation.navigate('Home');
     } catch (error) {
-      console.log(error);
       alert('Registro falhou: ' + error.message);
     } finally {
       setLoading(false);

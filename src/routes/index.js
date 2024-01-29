@@ -10,53 +10,42 @@ import Info from '../pages/Info';
 const Stack = createNativeStackNavigator();
 const InsideStack = createNativeStackNavigator();
 
-
-function name(params) {
-    return (
-        <InsideStack.Navigator>
-            <InsideStack.Screen name='Exercicios' component={List} />
-            <InsideStack.Screen name='details' component={Details} />
-        </InsideStack.Navigator>
-    )
-}
-
 export default function Routes() {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
         onAuthStateChanged(FIREBASE_AUTH, (user) => {
-            console.log('user', user);
             setUser(user);
         });
     }, [])
 
     return (
-        <Stack.Navigator inicialRouteName="Login">
+        <Stack.Navigator inicialRouteName="Login" screenOptions={{ animation: 'none' }}>
             <Stack.Screen
                 name="Welcome"
                 component={Welcome}
-                options={{ headerShown: false }}
+                options={{ headerShown: false, gestureEnabled: false }}
             />
             {user ? (
                 <Stack.Screen
                     name="SignIn"
                     component={Home}
-                    options={{ headerShown: false }} />
+                    options={{ headerShown: false, gestureEnabled: false  }} />
             ) : (
                 <Stack.Screen
                     name="SignIn"
                     component={SignIn}
-                    options={{ headerShown: false }} />
+                    options={{ headerShown: false, gestureEnabled: false  }} />
             )}
             <Stack.Screen
                 name="Info"
                 component={Info}
-                options={{ headerShown: false }}
+                options={{ headerShown: false, gestureEnabled: false  }}
             />
             <Stack.Screen
                 name="Home"
                 component={Home}
-                options={{ headerShown: false }}
+                options={{ headerShown: false, gestureEnabled: false  }}
             />
         </Stack.Navigator>
     )

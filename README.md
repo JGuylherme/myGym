@@ -25,6 +25,8 @@ npm install @react-navigation/native
 npm install react-native-screens react-native-safe-area-context
 npm install @react-navigation/native-stack
 npm install react-native-animatable
+npm install redux react-redux
+npm install @react-navigation/stack @react-navigation/drawer
 ```
 
 **Firebase**: Fornece armazenamento em nuvem, autenticação e funcionalidade de banco de dados em tempo real.
@@ -62,6 +64,9 @@ npm install @react-navigation/native
 npm install react-native-screens react-native-safe-area-context
 npm install @react-navigation/native-stack
 npm install react-native-animatable
+npm install react-native-gesture-handler
+npm install redux react-redux
+npm install @react-navigation/stack @react-navigation/drawer
 ```
 
 **Firebase**: Provides cloud storage, authentication, and real-time database functionality.
